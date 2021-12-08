@@ -16,4 +16,3 @@ https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_NQJoBkAAA
 ```
 
 https://drive.google.com/file/d/1cTrfh-Tg39EnbI7u0-T29syyDp6e_gjN/view?usp=sharing
-https://scholar.google.com/citations?view_op=view_citation&hl=en&user=_NQJoBkAAAAJ&sortby=pubdate&citation_for_view=_NQJoBkAAAAJ:qxL8FJ1GzNcC
