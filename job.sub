@@ -1,0 +1,51 @@
+####################
+#
+# Experiments script
+# Simple HTCondor submit description file
+#
+# reference: https://gitlab.engr.illinois.edu/Vision/vision-gpu-servers/-/wikis/HTCondor-user-guide#submit-jobs
+#
+# chmod a+x test_condor.py
+# chmod a+x experiments_meta_model_optimization.py
+# chmod a+x meta_learning_experiments_submission.py
+# chmod a+x download_miniImagenet.py
+# chmod a+x ~/meta-learning-lstm-pytorch/main.py
+# chmod a+x /home/miranda9/automl-meta-learning/automl-proj-src/meta_learning/datasets/rand_fc_nn_vec_mu_ls_gen.py
+# chmod a+x /home/miranda9/automl-meta-learning/automl-proj-src/experiments/meta_learning/supervised_experiments_submission.py
+# chmod a+x /home/miranda9/automl-meta-learning/results_plots/is_rapid_learning_real.py
+# chmod a+x /home/miranda9/automl-meta-learning/test_condor.py
+# chmod a+x ~/automl-meta-learning/main_vision.sh
+#
+# chmod a+x ~/automl-meta-learning/main.sh
+# condor_submit -i
+# condor_submit job.sub
+#
+####################
+
+Executable = /home/miranda9/automl-meta-learning/main.sh
+SUBMIT_FILE = main.sh
+
+# Output Files
+Log          = $(SUBMIT_FILE).log$(CLUSTER)
+Output       = $(SUBMIT_FILE).o$(CLUSTER)
+Error       = $(SUBMIT_FILE).o$(CLUSTER)
+# Error        = $(SUBMIT_FILE).e$(CLUSTER)
+
+# Use this to make sure x gpu is available. The key words are case insensitive.
+REquest_gpus = 1
+requirements = (CUDADeviceName != "Tesla K40m")
+# requirements = (CUDADeviceName == "Titan Xp")
+# requirements = (CUDADeviceName == "Quadro RTX 6000")
+# requirements = (CUDADeviceName == "A40")
+
+# Request_cpus = 4
+Request_cpus = 4
+# Request_cpus = 32
+
+Notify_user = brando.science@gmail.com
+Notification = always
+
+Environment = CONDOR_JOB_ID= $(CLUSTER)
+
+# "Queue" means add the setup until this line to the queue (needs to be at the end of script).
+Queue
