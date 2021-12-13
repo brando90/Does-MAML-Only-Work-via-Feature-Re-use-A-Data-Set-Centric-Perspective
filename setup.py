@@ -4,7 +4,7 @@ conda activate uutils_env
 conda remove --all --name uutils_env
 rm -rf /Users/brando/anaconda3/envs/uutils_env
 
-pip install -e ~/ultimate-utils/ultimate-utils-proj-src/
+pip install -e ~/ultimate-utils/ultimate-utils-proj-maml_vs_adapted_maml_src/
 
 pip install ultimate-utils
 
